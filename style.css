@@ -1,119 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap');
+
 /* Body Styling */
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fdf0f5; /* Light pink */
-    color: #333; /* Dark gray */
+    background-color: #FAF7F5; /* Background Color (Body) */
+    color: #333333; /* Text Color */
+    line-height: 1.6; /* Improved line spacing */
+}
+
+/* General Link Styling */
+a {
+    color: #DAA520; /* Accent Color for general links */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #b8860b; /* Darker Gold for hover */
+    text-decoration: underline;
+}
+
+/* Headings Styling */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #333333; /* Text Color for headings */
+    margin-top: 1em; /* Space above headings */
+    margin-bottom: 0.5em; /* Space below headings */
+}
+
+h2 {
+    margin-bottom: 1em; /* More space below h2 */
+}
+
+h3 {
+    margin-bottom: 0.75em; /* Slightly more space for h3 if it's a section title */
+}
+
+/* Specific heading adjustments */
+header h1 {
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0; /* Remove default margins for header h1 */
+}
+
+/* General Section Padding */
+header, nav ul, main, footer {
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 /* Header Styling */
 header {
-    background-color: #e7c6d7; /* Soft rose */
-    color: #fff; /* White */
-    padding: 20px;
+    background-color: #CBA0AE; /* Primary Color */
+    color: #FFFFFF; /* White text */
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
 }
 
 /* Navigation Bar Styling */
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Reset margin */
     text-align: center;
-    background-color: #e7c6d7; /* Matching header for seamless look */
+    background-color: #CBA0AE; /* Primary Color */
+    padding-top: 10px; /* Adjusted padding */
+    padding-bottom: 10px; /* Adjusted padding */
 }
 
 nav li {
     display: inline-block;
-    margin: 0 15px;
+    margin: 0 10px; /* Adjusted margin */
 }
 
 nav a {
     text-decoration: none;
-    color: #fff; /* White, to match header text */
-    padding: 10px 0; /* Add some padding for better clickability */
-    display: inline-block; /* Allows padding to take effect correctly */
+    color: #FFFFFF; /* White text for nav links */
+    padding: 8px 12px; /* Adjusted padding for better clickable area */
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    border-radius: 4px; /* Subtle rounded corners for links */
+    background-color: transparent; /* Explicitly set initial background */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Added transition */
 }
 
 nav a:hover {
-    color: #f0e68c; /* Light Khaki for hover - or any other contrasting color */
-    text-decoration: underline;
+    color: #DAA520; /* Accent Color for hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+    text-decoration: none; /* Remove underline, rely on color/bg change */
 }
 
 /* Main Content Styling */
 main {
-    padding: 20px;
+    padding-top: 30px; /* More top padding for main content */
+    padding-bottom: 30px; /* More bottom padding for main content */
 }
+
+/* Banner Image Styling */
+.banner-image {
+    width: 100%;
+    max-width: 900px; /* Increased max-width */
+    display: block;
+    margin: 20px auto 30px auto; /* Adjusted margin */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+    transition: transform 0.5s ease-out; /* Added for hover effect */
+}
+
+.banner-image:hover {
+    transform: scale(1.03); /* Subtle zoom on hover */
+}
+
+/* Shared Container for Flex Items (Products & Featured) */
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Allows items to space out */
+    gap: 20px; /* Space between cards */
+    padding: 20px 0; /* Padding above and below the container */
+}
+
+/* Shared Card Styling (Products & Featured) */
+.item-card {
+    border: 1px solid #DDDDDD; /* Subtle Borders/Dividers */
+    padding: 20px; /* Increased padding */
+    margin-bottom: 20px; /* Ensures gap if flex-gap not fully supported or for single column */
+    text-align: center;
+    background-color: #FFFFFF; /* White background for cards */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Softer shadow */
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content apart vertically */
+    flex-basis: calc(33.333% - 40px); /* Aim for 3 cards, accounting for gap & padding */
+    min-width: 280px; /* Minimum width before wrapping or shrinking too much */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.item-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+
+.item-card h3 { /* Applies to Product Name and Featured Item Title */
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #333333; /* Text Color for product names */
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 1.4em; /* Slightly larger product names */
+}
+
+.item-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px; /* Space below image */
+    border-radius: 4px; /* Rounded corners for images */
+}
+
+.item-card p { /* Applies to Product Price and Featured Item Description */
+    font-size: 1.1em; /* Larger price text */
+    color: #CBA0AE; /* Primary color for price / accent in featured */
+    margin-bottom: 15px; /* Space below price */
+}
+
+/* Featured item card specific styling if needed (currently inherits .item-card) */
+.featured-item-card {
+    /* min-height: 200px; - Removed if content dictates height */
+    align-items: center; /* Center placeholder text if no image */
+}
+.featured-item-card p { /* Example: if featured description needs different color */
+    color: #555555; /* Slightly darker gray for description text */
+}
+
 
 /* Footer Styling */
 footer {
-    background-color: #e7c6d7; /* Soft rose, matching header */
-    color: #fff; /* White */
-    padding: 10px;
+    background-color: #CBA0AE; /* Primary Color */
+    color: #FFFFFF; /* White text */
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
-    font-size: 0.8em;
-}
-
-/* Product Container Styling (for products.html) */
-.product-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px 0; /* Add some padding to the container */
-}
-
-/* Product Card Styling */
-.product-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    width: 200px; /* Fixed width for cards, adjust as necessary */
-    background-color: #fff; /* White background for cards */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-}
-
-.product-card img {
-    max-width: 100%; /* Make images responsive within the card */
-    height: auto;
-    margin-bottom: 10px;
+    font-size: 0.9em; /* Slightly larger footer text */
 }
 
 /* Form Styling (for contact.html) */
+form {
+    max-width: 600px; /* Constrain form width */
+    margin: 30px auto; /* Center form and add vertical margin */
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
 form div {
-    margin-bottom: 15px; /* Add some space between form rows */
+    margin-bottom: 20px; /* Increased space between form rows */
 }
 
 label {
     display: block;
-    margin-bottom: 5px; /* Space between label and input */
+    margin-bottom: 8px; /* Increased space between label and input */
+    font-family: 'Lato', sans-serif;
+    color: #333333; /* Text Color for labels */
+    font-weight: bold;
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
     width: 100%;
-    padding: 8px;
+    padding: 12px; /* Increased padding */
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #DDDDDD; /* Subtle Borders/Dividers for form inputs */
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    color: #333333; /* Text Color for input text */
+    border-radius: 4px; /* Rounded corners for inputs */
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added for focus */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #CBA0AE; /* Primary color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(203, 160, 174, 0.25); /* Subtle glow effect */
 }
 
 textarea {
-    height: 100px; /* Specific height for textarea */
-    resize: vertical; /* Allow vertical resizing */
+    height: 120px; /* Adjusted height */
+    resize: vertical;
 }
 
 input[type="submit"] {
-    background-color: #d1adc0; /* A slightly darker rose for the button */
-    color: #fff;
-    padding: 10px 15px;
+    background-color: #CBA0AE; /* Primary Color for button */
+    color: #FFFFFF; /* White text for button */
+    padding: 12px 20px; /* Increased padding */
     border: none;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.1em; /* Slightly larger button text */
+    font-family: 'Lato', sans-serif;
+    border-radius: 4px; /* Rounded corners for button */
+    display: block; /* Make button block to control width */
+    width: 100%; /* Make button full width of form container */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transition */
 }
 
 input[type="submit"]:hover {
-    background-color: #b998ae; /* Darken button on hover */
+    background-color: #b08f9a; /* Darker shade of Primary Color for hover */
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .item-card {
+        flex-basis: calc(50% - 30px); /* 2 cards per row on medium screens */
+        min-width: calc(50% - 30px);
+    }
+    nav ul {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    header, main, footer {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-card {
+        flex-basis: 100%; /* 1 card per row on small screens */
+        min-width: 0; /* Allow full width */
+        margin-left: 0;
+        margin-right: 0;
+    }
+    nav li {
+        display: block; /* Stack nav items */
+        margin: 5px 0;
+    }
+    nav a {
+        padding: 10px;
+        display: block; /* Make nav links full width */
+    }
 }

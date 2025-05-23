@@ -1,0 +1,119 @@
+/* Body Styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf0f5; /* Light pink */
+    color: #333; /* Dark gray */
+}
+
+/* Header Styling */
+header {
+    background-color: #e7c6d7; /* Soft rose */
+    color: #fff; /* White */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation Bar Styling */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #e7c6d7; /* Matching header for seamless look */
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff; /* White, to match header text */
+    padding: 10px 0; /* Add some padding for better clickability */
+    display: inline-block; /* Allows padding to take effect correctly */
+}
+
+nav a:hover {
+    color: #f0e68c; /* Light Khaki for hover - or any other contrasting color */
+    text-decoration: underline;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #e7c6d7; /* Soft rose, matching header */
+    color: #fff; /* White */
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/* Product Container Styling (for products.html) */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px 0; /* Add some padding to the container */
+}
+
+/* Product Card Styling */
+.product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    width: 200px; /* Fixed width for cards, adjust as necessary */
+    background-color: #fff; /* White background for cards */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.product-card img {
+    max-width: 100%; /* Make images responsive within the card */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Form Styling (for contact.html) */
+form div {
+    margin-bottom: 15px; /* Add some space between form rows */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px; /* Space between label and input */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px; /* Specific height for textarea */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+input[type="submit"] {
+    background-color: #d1adc0; /* A slightly darker rose for the button */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input[type="submit"]:hover {
+    background-color: #b998ae; /* Darken button on hover */
+}
